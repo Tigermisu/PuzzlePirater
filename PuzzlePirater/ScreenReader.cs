@@ -75,13 +75,17 @@ namespace PuzzlePirater {
         /// Finds the position of the Puzzle Pirates window, and stores it in a member variable for further reference.
         /// </summary>
         private void getWindowPosition() {
-            Process puzzlePiratesProcess = Process.GetProcessesByName("javaw").First();
-            if (puzzlePiratesProcess.MainWindowTitle.StartsWith("Puzzle Pirates")) {
-                ppWindow = puzzlePiratesProcess.MainWindowHandle;
-                GetWindowRect(ppWindow, ref windowPosition);
-            } else {
-                throw new WindowNotFoundException("Puzzle Pirates window could not be found.");
+            Process[] javaProcesses = Process.GetProcessesByName("javaw");
+            foreach (Process p in javaProcesses) {
+                if (p.MainWindowTitle.StartsWith("Puzzle Pirates")) {
+                    ppWindow = p.MainWindowHandle;
+                    GetWindowRect(ppWindow, ref windowPosition);
+                    return;
+                }
             }
+            // Not a single process matches Puzzle Pirates
+            throw new WindowNotFoundException("Puzzle Pirates window could not be found.");
+            
         }
 
         /// <summary>

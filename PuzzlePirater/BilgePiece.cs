@@ -30,7 +30,7 @@ namespace PuzzlePirater {
             { 6475, PieceNames.Sea },
             { 5474, PieceNames.Water },
             { 5941, PieceNames.Fish },
-            { 4529, PieceNames.Sea }, // Sunkean Sea
+            { 4529, PieceNames.Sea }, // Sunken Sea
             { 3716, PieceNames.Ocean }, // Sunken Ocean
             { 4133, PieceNames.Water }, // Sunken Water
             { 4305, PieceNames.Fish }, // Sunken Fish

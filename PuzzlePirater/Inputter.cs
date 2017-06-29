@@ -37,7 +37,7 @@ namespace PuzzlePirater {
         }
 
         /// <summary>
-        /// Starts a new thread that constantly executes ClickActions stores in the queue
+        /// Starts a new thread that constantly executes ClickActions stored in the queue
         /// </summary>
         public static void startQueueConsumption() {
             if (clickQueueConsumer == null) { 
